@@ -55,11 +55,11 @@
 
     function callUploadApi(encoded_image, image_name , custom_tags) {
         // params, body, additionalParams
-        return sdk.uploadPost({'x-api-key':'2eCQlxGHp5a8S7qi7sVEm6SwY7BaYpNXapcy15av'}, {
+        return sdk.uploadPost({}, {
           'ImageName': image_name,
           'x-amz-meta-customLabels': custom_tags,
           'img64': encoded_image
-        }, {});
+        }, {'x-api-key':'2eCQlxGHp5a8S7qi7sVEm6SwY7BaYpNXapcy15av'});
 
       }
 
