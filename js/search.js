@@ -14,6 +14,7 @@ $(document).ready(function() {
 
         msg = $('.message-input').val();
         //console.log(msg);
+
         
         if ($.trim(msg) == '') {
           console.log("no input");
