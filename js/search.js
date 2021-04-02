@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     function callSearchApi(message) {
         // params, body, additionalParams
-        return sdk.searchGet({'q': message}, {}, {'x-api-key':'2eCQlxGHp5a8S7qi7sVEm6SwY7BaYpNXapcy15av'});
+        return sdk.searchGet({'q': message}, {}, {});
       }
 
 
