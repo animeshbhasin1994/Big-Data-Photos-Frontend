@@ -27,6 +27,7 @@
       <form>
         <label for="form-search"></label>
         <input type="text" class="message-input" id="form-search" placeholder="What are you looking for?">
+          <input type="text" class="name-input" id="name" placeholder="Enter Name">
         <button id="record">record</button>
       </form>
     </div>
@@ -53,11 +54,12 @@
 
   <script>
 
-    function callUploadApi(encoded_image, image_name , custom_tags) {
+    function callUploadApi(encoded_image, image_name , custom_tags,name) {
         // params, body, additionalParams
         return sdk.uploadPost({}, {
           'ImageName': image_name,
           'x-amz-meta-customLabels': custom_tags,
+          'x-amz-meta-name': name,
           'img64': encoded_image
         }, {});
 
@@ -72,7 +74,7 @@
         console.log("Going to upload")
         //console.log('RESULT', reader.result);
         //call upload in sdk and pass reader.result
-        callUploadApi(reader.result, file.name, $('.message-input').val())
+        callUploadApi(reader.result, file.name, $('.message-input').val(),$('.name-input').val())
       }
       reader.readAsDataURL(file);
     };
